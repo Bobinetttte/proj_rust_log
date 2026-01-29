@@ -17,9 +17,10 @@ pub fn logger(array_events : &Vec<&Event>) {
     println!("===== END LOG =====");
     let final_stats = stats.get_stats();
 
-    let (total, warning, error, critical) = final_stats;
-    println!("Total log : {}", total);
-    println!("Total warning : {}", warning);
-    println!("Total error : {}", error);
-    println!("Total critical : {}", critical);
+    let (nb_events_total, nb_events_warning, nb_events_error, nb_events_critical, worse_gravity) = final_stats;
+    println!("Total log : {}", nb_events_total);
+    println!("Total warning : {}", nb_events_warning);
+    println!("Total error : {}", nb_events_error);
+    println!("Total critical : {}", nb_events_critical);
+    println!("Worse gravity level : {:?}", worse_gravity);
 }
