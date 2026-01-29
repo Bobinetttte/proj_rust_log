@@ -1,7 +1,12 @@
 mod event;
+mod rules;
+mod logger;
 use crate::event::Event;
+use crate::event::Gravity;
+use crate::logger::{logger};
 
 fn main () {
+
 
     /*
         Events with id, type and gravity level
@@ -9,39 +14,41 @@ fn main () {
 
     // Debug
     let event_debug = Event {
-        id : 00,
-        event_type : String::from("Debug"),
-        gravity_level : 0,
+        id : String::from("1001"),
+        event_type : String::from("ConfigLoaded") ,
+        gravity_level : Gravity::Debug,
     };
 
     // Information
     let event_info = Event {
-        id : 01,
-        event_type : String::from("Information"),
-        gravity_level : 0,
+        id : String::from("2001"),
+        event_type : String::from("UserLogin"),
+        gravity_level : Gravity::Information,
     };
     
     // Warning
     let event_warning = Event {
-        id : 02,
-        event_type : String::from("Warning"),
-        gravity_level : 1,
+        id : String::from("3001"),
+        event_type : String::from("MultipleAttempts"),
+        gravity_level : Gravity::Warning,
     };
     
     // Error
     let event_error = Event {
-        id : 03,
-        event_type : String::from("Error"),
-        gravity_level : 2,
+        id : String::from("4001"),
+        event_type : String::from("AccessDenied"),
+        gravity_level : Gravity::Error,
     };
     
     // Critical
     let event_critical = Event {
-        id : 04,
-        event_type : String::from("Critical"),
-        gravity_level : 3,
+        id : String::from("5001"),
+        event_type : String::from("SystemFailure"),
+        gravity_level : Gravity::Critical,
     };
 
-    
+    let array_of_events = vec![&event_debug, &event_info, &event_warning, &event_error, &event_critical];
+
+    logger(&array_of_events);
 
 }

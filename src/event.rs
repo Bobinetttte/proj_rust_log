@@ -1,5 +1,14 @@
+#[derive(PartialEq)]
+pub enum Gravity {
+    Debug,
+    Information,
+    Warning,
+    Error,
+    Critical,
+}
+
 pub struct Event {
-    pub id : i32,
+    pub id : String,
     pub event_type : String,
-    pub gravity_level : u8,
+    pub gravity_level : Gravity,
 }
