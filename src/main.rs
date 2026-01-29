@@ -1,6 +1,7 @@
 mod event;
 mod rules;
 mod logger;
+mod stats;
 use crate::event::Event;
 use crate::event::Gravity;
 use crate::logger::{logger};
