@@ -1,4 +1,4 @@
-It's been 6 days since I started learning Rust.
+I started learning Rust on the 23.01.2026.
 
 ## Objectives
 
